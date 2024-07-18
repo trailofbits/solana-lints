@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-anchor-syn = "0.29.0"
+anchor-syn = "0.30.1"
 clippy_utils = { git = "https://github.com/rust-lang/rust-clippy", rev = "ac4c2094a6030530661bee3876e0228ddfeb6b8b" }
 if_chain = "1.0"
 syn = { version = "1.0.109", features = ["parsing"] }
