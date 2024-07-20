@@ -1,0 +1,36 @@
+[package]
+name = "improper_instruction_introspection"
+version = "0.1.0"
+authors = ["Trail of Bits"]
+description = "Reports uses of absolute indexes for accessing instructions (`load_instruction_at_checked`)"
+edition = "2018"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[[example]]
+name = "insecure"
+path = "ui/insecure/src/lib.rs"
+
+[[example]]
+name = "secure"
+path = "ui/secure/src/lib.rs"
+
+[dependencies]
+clippy_utils = { git = "https://github.com/rust-lang/rust-clippy", rev = "ac4c2094a6030530661bee3876e0228ddfeb6b8b" }
+dylint_linting = "2.6"
+if_chain = "1.0"
+solana-lints = { path = "../../crate" }
+
+[dev-dependencies]
+anchor-lang = "0.29"
+anchor-spl = "0.29"
+dylint_testing = "2.6"
+solana-program = "=1.18.1"
+
+[workspace]
+
+[package.metadata.rust-analyzer]
+rustc_private = true
+

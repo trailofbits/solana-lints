@@ -54,3 +54,8 @@ pub const SYSVAR_FEES: [&str; 3] = ["solana_program", "fees", "Fees"];
 pub const SYSVAR_LAST_RESTART_SLOT: [&str; 3] =
     ["solana_program", "last_restart_slot", "LastRestartSlot"];
 pub const SYSVAR_RENT: [&str; 3] = ["solana_program", "rent", "Rent"];
+pub const LOAD_INSTRUCTION_AT_CHECKED: [&str; 3] = [
+    "solana_program",
+    "instructions",
+    "load_instruction_at_checked",
+];
