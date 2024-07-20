@@ -5,7 +5,6 @@ extern crate rustc_hir;
 extern crate rustc_middle;
 extern crate rustc_span;
 
-use anchor_syn::{AccountField, AccountsStruct, ConstraintGroup};
 use clippy_utils::{
     diagnostics::span_lint, match_any_def_paths, match_def_path, ty::match_type, SpanlessEq,
 };
@@ -18,6 +17,7 @@ use rustc_hir::{
 use rustc_lint::{LateContext, LateLintPass};
 use rustc_middle::ty;
 use rustc_span::Span;
+use solana_lints::anchor_syn::{AccountField, AccountsStruct, ConstraintGroup};
 use solana_lints::{paths, utils::get_anchor_accounts_struct, utils::visit_expr_no_bodies};
 use std::collections::HashMap;
 

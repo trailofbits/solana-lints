@@ -5,7 +5,6 @@ extern crate rustc_hir;
 extern crate rustc_middle;
 extern crate rustc_span;
 
-use anchor_syn::{AccountField, Ty as FieldTy};
 use clippy_utils::{diagnostics::span_lint, diagnostics::span_lint_and_then, ty::match_type};
 use if_chain::if_chain;
 use rustc_hir::{
@@ -14,6 +13,7 @@ use rustc_hir::{
 use rustc_lint::{LateContext, LateLintPass};
 use rustc_middle::ty::{self, GenericArg, GenericArgKind};
 use rustc_span::Span;
+use solana_lints::anchor_syn::{AccountField, Ty as FieldTy};
 use solana_lints::{
     paths,
     utils::{get_anchor_accounts_struct, is_anchor_program, visit_expr_no_bodies},

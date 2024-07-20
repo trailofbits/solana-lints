@@ -38,7 +38,20 @@ diff -r -x Cargo.lock ./insecure-still-still/Cargo.toml ../../../../lints/insecu
 diff -r -x Cargo.lock ./insecure-still-still/src/lib.rs ../../../../lints/insecure_account_close/ui/insecure-still-still/src/lib.rs
 1a2
 > use anchor_lang::solana_program::entrypoint::ProgramResult;
-45a47,49
+6a8,11
+> // S3v3ru5: Anchor does not use CLOSED_ACCOUNT_DISCRIMINATOR from v0.30
+> // ref: https://github.com/coral-xyz/anchor/pull/2726
+> pub const CLOSED_ACCOUNT_DISCRIMINATOR: [u8; 8] = [255, 255, 255, 255, 255, 255, 255, 255];
+> 
+25d29
+< 
+28,30c32
+<         cursor
+<             .write_all(&anchor_lang::__private::CLOSED_ACCOUNT_DISCRIMINATOR)
+<             .unwrap();
+---
+>         cursor.write_all(&CLOSED_ACCOUNT_DISCRIMINATOR).unwrap();
+45a48,50
 > 
 > #[allow(dead_code)]
 > fn main() {}
@@ -68,9 +81,16 @@ diff -r -x Cargo.lock ./secure/Cargo.toml ../../../../lints/insecure_account_clo
 > 
 > [workspace]
 diff -r -x Cargo.lock ./secure/src/lib.rs ../../../../lints/insecure_account_close/ui/secure/src/lib.rs
-2a3
+1d0
+< use anchor_lang::__private::CLOSED_ACCOUNT_DISCRIMINATOR;
+2a2
 > use anchor_lang::solana_program::entrypoint::ProgramResult;
-71a73,75
+7a8,11
+> // S3v3ru5: Anchor does not use CLOSED_ACCOUNT_DISCRIMINATOR from v0.30
+> // ref: https://github.com/coral-xyz/anchor/pull/2726
+> pub const CLOSED_ACCOUNT_DISCRIMINATOR: [u8; 8] = [255, 255, 255, 255, 255, 255, 255, 255];
+> 
+71a76,78
 > 
 > #[allow(dead_code)]
 > fn main() {}

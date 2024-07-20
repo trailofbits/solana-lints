@@ -48,7 +48,7 @@ if_chain = "1.0"
 solana-lints = { path = "../../crate" }
 
 [dev-dependencies]
-anchor-lang = "0.29"
+anchor-lang = "0.30"
 dylint_testing = "2.6"
 
 [workspace]

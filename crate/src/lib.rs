@@ -11,3 +11,6 @@ extern crate rustc_driver;
 pub mod paths;
 
 pub mod utils;
+
+pub use anchor_syn;
+pub use syn;

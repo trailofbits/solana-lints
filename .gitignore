@@ -1,2 +1,3 @@
 /target
 /lints/*/ui/*/Cargo.lock
+/lints/*/target_*

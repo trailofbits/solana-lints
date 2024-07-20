@@ -5,6 +5,10 @@ use std::ops::DerefMut;
 
 declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 
+// S3v3ru5: Anchor does not use CLOSED_ACCOUNT_DISCRIMINATOR from v0.30
+// ref: https://github.com/coral-xyz/anchor/pull/2726
+pub const CLOSED_ACCOUNT_DISCRIMINATOR: [u8; 8] = [255, 255, 255, 255, 255, 255, 255, 255];
+
 #[program]
 pub mod closing_accounts_insecure_still_still {
     use super::*;
@@ -23,12 +27,9 @@ pub mod closing_accounts_insecure_still_still {
         for byte in data.deref_mut().iter_mut() {
             *byte = 0;
         }
-
         let dst: &mut [u8] = &mut data;
         let mut cursor = std::io::Cursor::new(dst);
-        cursor
-            .write_all(&anchor_lang::__private::CLOSED_ACCOUNT_DISCRIMINATOR)
-            .unwrap();
+        cursor.write_all(&CLOSED_ACCOUNT_DISCRIMINATOR).unwrap();
 
         Ok(())
     }

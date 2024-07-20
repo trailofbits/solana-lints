@@ -4,7 +4,6 @@
 extern crate rustc_hir;
 extern crate rustc_span;
 
-use anchor_syn::{AccountField, SysvarTy, Ty as FieldTy};
 use clippy_utils::{
     diagnostics::span_lint, diagnostics::span_lint_and_then, match_any_def_paths, match_def_path,
 };
@@ -17,6 +16,7 @@ use rustc_hir::{
 };
 use rustc_lint::{LateContext, LateLintPass};
 use rustc_span::Span;
+use solana_lints::anchor_syn::{AccountField, SysvarTy, Ty as FieldTy};
 use solana_lints::{paths, utils::get_anchor_accounts_struct};
 
 dylint_linting::declare_late_lint! {
