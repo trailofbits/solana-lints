@@ -1,0 +1,15 @@
+error: user_a and user_b have identical account types but do not have a key check constraint
+  --> $DIR/lib.rs:25:5
+   |
+LL |     user_a: Account<'info, User>,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `-D duplicate-mutable-accounts` implied by `-D warnings`
+help: add an anchor key check constraint: #[account(constraint = user_a.key() != user_b.key())]
+  --> $DIR/lib.rs:26:5
+   |
+LL |     user_b: Account<'info, User>,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to previous error
+

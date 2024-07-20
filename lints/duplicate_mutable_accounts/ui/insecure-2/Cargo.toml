@@ -1,0 +1,21 @@
+[package]
+name = "duplicate-mutable-accounts-insecure-2"
+version = "0.1.0"
+description = "Does not have all required key constraint checks"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "duplicate_mutable_accounts_insecure_2"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[workspace]
+
+[dependencies]
+anchor-lang = "0.24.2"

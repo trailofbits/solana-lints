@@ -1,0 +1,47 @@
+[package]
+name = "duplicate_mutable_accounts"
+version = "0.1.0"
+authors = ["authors go here"]
+description = "decription goes here"
+edition = "2018"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[[example]]
+name = "insecure"
+path = "ui/insecure/src/lib.rs"
+
+[[example]]
+name = "insecure-2"
+path = "ui/insecure-2/src/lib.rs"
+
+[[example]]
+name = "secure"
+path = "ui/secure/src/lib.rs"
+
+[[example]]
+name = "recommended"
+path = "ui/recommended/src/lib.rs"
+
+[[example]]
+name = "recommended-2"
+path = "ui/recommended-2/src/lib.rs"
+
+[dependencies]
+clippy_utils = { git = "https://github.com/rust-lang/rust-clippy", rev = "2b2190cb5667cdd276a24ef8b9f3692209c54a89" }
+dylint_linting = "2.0.1"
+if_chain = "1.0.2"
+proc-macro2 = "1.0.40"
+quote = "1.0.20"
+solana-lints = { path = "../../crate" }
+
+[dev-dependencies]
+anchor-lang = "0.24.2"
+dylint_testing = "2.0.1"
+
+[workspace]
+
+[package.metadata.rust-analyzer]
+rustc_private = true
