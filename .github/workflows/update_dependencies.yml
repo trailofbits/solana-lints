@@ -24,7 +24,7 @@ jobs:
         run: scripts/update_dependencies.sh
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           title: Update dependencies
           token: ${{ secrets.PR_GITHUB_TOKEN }}
