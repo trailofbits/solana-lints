@@ -21,7 +21,7 @@ jobs:
         run: scripts/upgrade_lints.sh
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           title: Upgrade lints
           token: ${{ secrets.PR_GITHUB_TOKEN }}
