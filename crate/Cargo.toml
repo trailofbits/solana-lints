@@ -12,7 +12,7 @@ syn = { version = "1.0.109", features = ["parsing"] }
 [dev-dependencies]
 assert_cmd = "2.0"
 predicates = "3.1"
-similar-asserts = "1.5"
+similar-asserts = "1.6"
 tempfile = "3.10"
 toml = "0.8"
 
